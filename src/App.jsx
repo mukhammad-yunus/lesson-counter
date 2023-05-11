@@ -36,7 +36,7 @@ function App() {
         setIsNumber(false);
         setIsFinished(true);
         setCount("");
-      }, 1500);
+      }, 1000);
     }
   }
   return (
