@@ -14,14 +14,14 @@ function App() {
     if (count) {
       setIsNumber(true);
       setIsDisabled(true);
-      setIsFinished(false)
-      setLesson(0)
+      setIsFinished(false);
+      setLesson(0);
     }
   }
   function changeNumber() {
-    setIsNumber(false)
-    setIsDisabled(false)
-    setIsFinished(false)
+    setIsNumber(false);
+    setIsDisabled(false);
+    setIsFinished(false);
     setCount("");
     setLesson(0);
   }
@@ -30,11 +30,11 @@ function App() {
     if (lesson < count) {
       setLesson((prev) => prev + 1);
     }
-    if (lesson == (count-1)) {
-      setIsDisabled(false)
-      setIsNumber(false)
-      setIsFinished(true)
-      setCount('')
+    if (lesson == count - 1) {
+      setIsDisabled(false);
+      setIsNumber(false);
+      setIsFinished(true);
+      setCount("");
     }
   }
   return (
@@ -48,7 +48,10 @@ function App() {
         isDisabled={isDisabled}
       />
       {isNumber && <InfoDisplay lesson={lesson} count={count} add={add} />}
-      {isFinished && <Congrats lesson={lesson} />}
+      {isFinished &&
+        setTimeout(() => {
+          return <Congrats lesson={lesson} />;
+        }, 2000)}
     </>
   );
 }
