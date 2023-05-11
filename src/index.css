@@ -1,0 +1,149 @@
+*{
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #03011e;
+}
+
+
+
+.grid-display {
+  display: grid;
+  grid-gap: 0.5rem;
+  padding: 1rem;
+}
+
+
+label,
+input,
+button{
+  display: block;
+  font-size: 1.25rem;
+}
+
+input#lesson,
+button{
+  margin-top: .5rem;
+  padding: 0.5rem;
+}
+
+input#lesson{
+  color: #03011e;
+  background-color: #cccccc;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input#lesson::-webkit-outer-spin-button,
+input#lesson::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button{
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  color: #03011e;
+  cursor: pointer;
+}
+.done-btn{
+  background: #a8c6cc;
+}
+.change-btn{
+  background: #cccccc;
+}
+
+.done-btn:hover{
+  background-color: #d2f8ff;
+  color: #262626;
+}
+.change-btn:hover{
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.bar,
+#change-bar{
+  height: 20px;
+  border-radius: 10px;
+}
+
+.bar{
+  width: 100%;
+  background-color: #fff;
+  border: #03011e solid 1px;
+  overflow: hidden;
+}
+
+#change-bar{
+  padding: 0 0.5rem;
+  background-color: #ff7e54;
+}
+
+.lessons-seen{
+  text-align: center;
+  grid-area: input;
+  font-size: 3rem;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: #cccccc;
+  border-radius: 5px;
+}
+
+#add{
+  height: auto;
+  background-color: #355070;
+  color: white;
+}
+
+section.grid-display{
+  margin-top: 2.5rem;
+}
+
+div .lessons-seen span{
+  color: #ff7e54;
+}
+
+.congrats{
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+@media (min-width:400px){
+  .grid-display{
+    grid-template-columns: auto minmax(200px, 40%) 10px 150px auto;
+    grid-template-areas: 
+    '. header header header'
+    '. input . button';
+    
+  }
+  #add{
+    grid-area: button;
+  }
+  .bar{
+    grid-area: header;
+  }
+  button{
+    grid-area: button;
+  }
+  label{
+    grid-area: header;
+  }
+  input#lesson{
+    grid-area: input;
+  }
+  .congrats{
+    grid-area: header;
+  }
+}
