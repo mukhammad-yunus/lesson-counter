@@ -145,6 +145,7 @@ div .lessons-seen span{
 }
 @media (min-width:400px){
   .grid-display{
+    display: grid;
     grid-template-columns: auto minmax(200px, 40%) 10px 150px auto;
     grid-template-areas: 
     '. header header header'
