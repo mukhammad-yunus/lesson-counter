@@ -31,10 +31,12 @@ function App() {
       setLesson((prev) => prev + 1);
     }
     if (lesson == count - 1) {
-      setIsDisabled(false);
-      setIsNumber(false);
-      setIsFinished(true);
-      setCount("");
+      setTimeout(() => {
+        setIsDisabled(false);
+        setIsNumber(false);
+        setIsFinished(true);
+        setCount("");
+      }, 2000);
     }
   }
   return (
@@ -48,10 +50,7 @@ function App() {
         isDisabled={isDisabled}
       />
       {isNumber && <InfoDisplay lesson={lesson} count={count} add={add} />}
-      {isFinished &&
-        setTimeout(() => {
-          return <Congrats lesson={lesson} />;
-        }, 2000)}
+      {isFinished && <Congrats lesson={lesson} />}
     </>
   );
 }
